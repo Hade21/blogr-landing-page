@@ -36,6 +36,9 @@ module.exports = {
             },
             borderRadius: {
                 "bottomleft": "100px",
+            },
+            boxShadow: {
+                "menu": "rgba(0, 0, 0, 0.4) 0px 30px 90px"
             }
         },
     },
