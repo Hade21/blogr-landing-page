@@ -24,6 +24,7 @@ const Content = () => {
             return () => window.removeEventListener('resize', handleResize)
         }
     }, [hasWindow]);
+    
     return (
         <div className="container">
             <div className="first my-12 md:my-52 px-2 w-screen">
