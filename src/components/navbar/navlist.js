@@ -1,32 +1,17 @@
 export const navlist = [{
-        menu: {
-            title: "Product",
-            class: "md:hover:underline relative"
-        },
-        items: {
-            title: ["Overview", "Pricing", "Marketplace", "Features", "Integrations"],
-            class: "hover:font-bold transition hover:relative hover:left-0.5"
-        }
+        title: "Product",
+        class: "md:hover:underline relative",
+        submenu: ["Overview", "Pricing", "Marketplace", "Features", "Integrations"],
     },
     {
-        menu: {
-            title: "Company",
-            class: "md:hover:underline relative"
-        },
-        items: {
-            title: ["About", "Team", "Blog", "Careers"],
-            class: "hover:font-bold transition hover:relative hover:left-0.5"
-        }
+        title: "Company",
+        class: "md:hover:underline relative",
+        submenu: ["About", "Team", "Blog", "Careers"],
     },
 
     {
-        menu: {
-            title: "Connect",
-            class: "md:hover:underline relative"
-        },
-        items: {
-            title: ["Contanct", "Newsletter", "LinkedIn"],
-            class: "hover:font-bold transition hover:relative hover:left-0.5"
-        }
-    }
-]
+        title: "Connect",
+        class: "md:hover:underline relative",
+        submenu: ["Contanct", "Newsletter", "LinkedIn"],
+    },
+];

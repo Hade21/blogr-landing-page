@@ -3,6 +3,7 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 import Menu from "../../images/icon-hamburger.svg";
 import Close from "../../images/icon-close.svg";
 import { navlist } from "./navlist";
+import MenuList from "./menulist";
 
 const hasWindow = typeof window !== "undefined";
 
@@ -14,14 +15,6 @@ function getDimension() {
 const Navbar = () => {
   const [state, setState] = useState(false);
   const [width, setWidth] = useState(getDimension());
-  const [collapse, setCollapse] = useState(false);
-
-  const dropdown = document.querySelectorAll(".menu");
-  dropdown.forEach((e) => {
-    e.addEventListener("click", function () {
-      console.log(e.classList.add("hello"));
-    });
-  });
 
   useEffect(() => {
     if (hasWindow) {
@@ -35,10 +28,6 @@ const Navbar = () => {
 
   const handleClick = () => {
     setState(!state);
-  };
-
-  const handleCollapse = () => {
-    setCollapse(!collapse);
   };
 
   return (
@@ -71,36 +60,8 @@ const Navbar = () => {
                   : "flex text-white-text text-lg gap-4 font-Overpass cursor-pointer"
               }
             >
-              {navlist.map((item, index) => {
-                return (
-                  <li
-                    className={
-                      width < 480
-                        ? `menu ${index}`
-                        : `menu ${index} ${item.menu.class}`
-                    }
-                    onClick={handleCollapse}
-                  >
-                    {item.menu.title}
-                    <ul
-                      className={
-                        collapse
-                          ? width < 480
-                            ? "grid font-normal bg-slate-200 gap-2 text-xl first:pt-2 last:pb-2 rounded-xl text-slate-500"
-                            : "font-Ubuntu text-very-dark-desaturated-blue bg-white rounded flex-col gap-4 py-6 px-4 text-sm text-left shadow-menu absolute top-6 w-28 flex"
-                          : "hidden"
-                      }
-                    >
-                      {item.items.title.map((i) => {
-                        return (
-                          <li className="w-fit mx-auto hover:font-bold hover:relative hover:left-0.5 hover:text-slate-900">
-                            <a href="#">{i}</a>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </li>
-                );
+              {navlist.map((item) => {
+                return <MenuList items={item} />;
               })}
             </ul>
           </div>
